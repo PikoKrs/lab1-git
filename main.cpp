@@ -1,6 +1,7 @@
 // Лабораторная работа № 1. Вариант 98. Инфляция.
 // Выполнил: Кривов Д., группа ПИ-53.
 #include <iostream>
+#include <iomanip>
 #include <cmath>
 using namespace std;
 
@@ -32,14 +33,16 @@ int main() {
 
         switch (choice) {
             case 1:
-                cout << "Введите текущую цену, инфляцию (% в год) и срок (лет): ";
+                cout << "Введите текущую цену (руб.), инфляцию (% в год) и срок (лет): ";
                 cin >> price >> inf >> n;
-                cout << "Будущая цена = " << futurePrice(price, inf, n) << "\n";
+                cout << "Будущая цена = " << fixed << setprecision(2)
+                     << futurePrice(price, inf, n) << " руб.\n";
                 break;
             case 2:
-                cout << "Введите сумму, инфляцию (% в год) и срок (лет): ";
+                cout << "Введите сумму (руб.), инфляцию (% в год) и срок (лет): ";
                 cin >> sum >> inf >> n;
-                cout << "Покупательная способность = " << purchasingPower(sum, inf, n) << "\n";
+                cout << "Покупательная способность = " << fixed << setprecision(2)
+                     << purchasingPower(sum, inf, n) << " руб.\n";
                 break;
             case 0:
                 cout << "Работа завершена.\n";
